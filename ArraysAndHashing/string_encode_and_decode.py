@@ -1,21 +1,36 @@
-def encode(strs: list) -> str:
-    for i in range(len(strs)):
-        strs[i] = f"{len(strs[i])}#{strs[i]}"
+"""
+This problem was HELL. I certainly learned new things, though.
+For some reason, I thought that you could change the incrementor
+on for loops. While I don't necessarily understand the optimal
+answer, I will make sure to revisit this problem in the future.
+"""
 
-    return "".join(strs)
+def encode(strs: list) -> str:
+    res = ""
+
+    for word in strs:
+        res += str(len(word)) + "#" + word
+
+    return res
 
 def decode(s: str) -> list:
-    strs = []
+    res, i = [], 0
 
-    for i in range(0, len(s), int[s[i]]):
-        char_length = int(s[i])
-        word = s[i:i+char_length+1]
+    while i < len(s):
+        j = i
 
-        strs.append(word)
+        while s[j] != '#':
+            j += 1
 
-    return strs
+        length = int(s[i:j]) # Takes into account double-digit integers
+        res.append(s[j + 1: j + 1 + length])
 
-enc = encode(["neet","code","love","you"])
-dec = decode(enc)
+        i = j + 1 + length
 
-print(dec)
+    return res
+
+
+
+
+
+
