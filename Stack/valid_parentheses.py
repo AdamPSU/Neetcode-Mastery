@@ -1,12 +1,13 @@
 """
-I struggled with this one, partially because the concept of stacks
-is pretty new me, but also because I seem to lack the vision that is
-necessary to think solutions through. This is likely to improve the more
-I grind.
+On my second read-through, I struggled a lot less; I was able to think through the concept of stacks a lot 
+more efficiently. It took about ~15, which is not the best for an easy problem, but I do think my problem-solving
+skills are improving somewhat. 
 """
 
 
 def is_valid_first(s: str):
+    """Incorrect solution."""
+    
     list_s = list(s)
 
     bracket_map = {"(": ")",
@@ -23,7 +24,7 @@ def is_valid_first(s: str):
 
 
 def is_valid_second(s:str):
-
+    
     close_to_open =  {')': '(',
                       ']': '[',
                       '}': '{'}
